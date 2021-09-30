@@ -23,11 +23,19 @@ int main()
     setbuf(stdout, NULL);
     eTrianguloEscaleno triangulo;
 
-    trianguloCarga(&triangulo);
-    trianguloMostrarPorValor(triangulo);
-    trianguloMostrarPorReferencia(&triangulo);
-    trianguloPerimetro(triangulo);
-    trianguloArea(triangulo);
+    if(trianguloCarga(&triangulo)==0)
+    {
+    	printf("Triangulo cargado exitosamente!!!");
+    	trianguloMostrarPorValor(triangulo);
+    	trianguloMostrarPorReferencia(&triangulo);
+    	trianguloPerimetro(triangulo);
+    	trianguloArea(triangulo);
+    }
+    else
+    {
+    	printf("No se pudo cargar el triangulo.");
+    }
+
 
     return EXIT_SUCCESS;
 
